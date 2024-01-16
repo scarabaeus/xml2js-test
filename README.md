@@ -1,1 +1,37 @@
-# ts-node-18-express
+# xml2js
+
+https://www.npmjs.com/package/xml2js
+
+Input:
+
+```xml
+<SOAP-ENV:Body xmlns:m = "http://www.xyz.org/quotation">
+  <m:GetQuotationResponse>
+    <m:Quotation>Here is the quotation</m:Quotation>
+  </m:GetQuotationResponse>
+</SOAP-ENV:Body>
+```
+
+Output:
+
+```json
+{
+  "result": {
+    "SOAP-ENV:Body": {
+      "$": {
+        "xmlns:m": "http://www.xyz.org/quotation"
+      },
+      "m:GetQuotationResponse": [
+        {
+          "m:Quotation": ["Here is the quotation"]
+        }
+      ]
+    }
+  }
+}
+```
+
+Related:
+
+- https://github.com/scarabaeus/xml2js-test
+- https://github.com/scarabaeus/xml-js-test
